@@ -160,26 +160,31 @@ var userData = {
             password: password
         };
 
-        // Wywołaj endpoint do logowania na backendzie
         fetch('/api/users/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(userData),
+            body: JSON.stringify({
+                email: email,
+                password: password
+            }),
         })
-        .then(response => {
-            if (response.ok) {
-                // Przetwórz odpowiedź, np. jeśli sukces, przekieruj na stronę główną
-                window.location.href = '/index.html'; // Tutaj podaj ścieżkę do strony głównej
+        .then(response => response.json())
+        .then(data => {
+            // Sprawdź czy logowanie powiodło się
+            if (data.token) {
+                // Zapisz token w localStorage lub ciasteczkach
+                localStorage.setItem('jwtToken', data.token);
+                // Przekieruj na stronę główną lub inną, zależnie od potrzeb
+                window.location.href = '/home';
             } else {
-                // Obsłuż błąd logowania
-                alert('Invalid credentials. Please try again.');
+                // Logowanie nie powiodło się, obsłuż błąd
+                console.error('Login failed');
             }
         })
         .catch(error => {
-            console.error('Error during login:', error);
-            // Obsłuż błąd
+            console.error('Error:', error);
         });
         }
 </script>
