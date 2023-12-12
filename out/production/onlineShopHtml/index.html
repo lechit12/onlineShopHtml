@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Strona główna</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    .carousel-fullwidth .carousel-inner,
+    .carousel-fullwidth .carousel-item,
+    .carousel-fullwidth .carousel-item img {
+      width: 100%;
+      height: auto;
+    }
+
+    .carousel-fullwidth .carousel-item {
+      position: relative;
+    }
+
+    .carousel-fullwidth .carousel-control-prev,
+    .carousel-fullwidth .carousel-control-next {
+      width: 5%;
+    }
+
+    .carousel-fullwidth .carousel-control-prev-icon,
+    .carousel-fullwidth .carousel-control-next-icon {
+      transform: scale(1.5);
+    }
+
+    @media (max-width: 767px) {
+      .carousel-fullwidth .carousel-control-prev,
+      .carousel-fullwidth .carousel-control-next {
+        width: 10%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-dark navbar-expand-lg navbar-sticky-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#">JK Auto - Sklep z częściami do twojego samochodu</a>
+      </div>
+      <div class="collapse navbar-collapse" id="navbar">
+        <form class="navbar-form navbar-right" role="form">
+          <div class="form-group">
+            <input type="text" placeholder="Email" class="form-control">
+          </div>
+          <div class="form-group">
+            <input type="password" placeholder="Password" class="form-control">
+          </div>
+          <button type="submit" class="btn btn-success">Sign in</button>
+          <a class="shoping-cart" href="koszyk.html">
+            <img src="img/koszyk2.png" width="35.2" height="31.2" alt="Koszyk">
+          </a>
+        </form>
+        <button class="btn btn-primary navbar-btn" onclick="window.location.href='rejestracja.html'">Zarejestruj się</button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid carousel-fullwidth">
+    <div id="przykladowaKaruzela2" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="d-block w-100" src="img/baner.jpg" alt="Pierwszy slajd">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="img/baner2.jpg" alt="Drugi slajd">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="img/baner3.jpg" alt="Trzeci slajd">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#przykladowaKaruzela2" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Poprzedni</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#przykladowaKaruzela2" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Następny</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="container">
+    <h1>Nowe części samochodowe!</h1>
+    <p>Znajdź najnowsze części, oferty specjalne i wiele więcej w naszym sklepie.</p>
+    <p><a class="btn btn-primary btn-lg" href="popularne.html" role="button">Sprawdź teraz &raquo;</a></p>
+  </div>
+
+  <section class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <h2>Popularne części</h2>
+        <p>Wyświetlanie najczęściej kupowanych części samochodowych.</p>
+        <p><a class="btn btn-secondary" href="popularne.html" role="button">Zobacz szczegóły &raquo;</a></p>
+      </div>
+      <div class="col-md-3">
+        <h2>Układ hamulcowy</h2>
+        <p>Znajdź części do układu hamulcowego swojego samochodu.</p>
+        <p><a class="btn btn-secondary" href="hamulcowy.html" role="button">Zobacz ofertę &raquo;</a></p>
+      </div>
+      <div class="col-md-3">
+        <h2>Układ wydechowy</h2>
+        <p>Odkryj nasze produkty związane z układem wydechowym.</p>
+        <p><a class="btn btn-secondary" href="wydechowy.html" role="button">Zobacz ofertę &raquo;</a></p>
+      </div>
+      <div class="col-md-3">
+        <h2>Filtry</h2>
+        <p>Szeroki wybór filtrów do samochodów różnych marek.</p>
+        <p><a class="btn btn-secondary" href="filtry.html" role="button">Zobacz ofertę &raquo;</a></p>
+      </div>
+    </div>
+
+    <hr>
+
+  </section>
+  <footer>
+    <p>&copy; Jkauto 2023</p>
+  </footer>
+  <script>
+    $(document).ready(function() {
+      $('.carousel').carousel();
+    });
+  </script>
+
+</body>
+
+</html>
