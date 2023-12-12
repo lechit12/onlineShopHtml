@@ -109,14 +109,79 @@
     <p>&copy; Jkauto 2023</p>
   </footer>
 
+
   <script>
+    function register() {
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+        var confirmPassword = document.getElementById("confirm-password").value;
+
+        // Sprawdź, czy hasła są takie same
+        if (password !== confirmPassword) {
+            alert('Passwords do not match. Please try again.');
+            return;
+        }
+
+        var userData = {
+            name: name,
+            email: email,
+            password: password
+        };
+
+        // Wywołaj endpoint do rejestracji na backendzie
+        fetch('/api/users/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(userData),
+        })
+        .then(response => {
+            if (response.ok) {
+                // Przetwórz odpowiedź, np. jeśli sukces, poinformuj użytkownika
+                alert('Registration successful. You can now log in.');
+                // Możesz także przekierować użytkownika na stronę logowania
+            } else {
+                // Obsłuż błąd rejestracji
+                alert('Registration failed. Please try again.');
+            }
+        })
+        .catch(error => {
+            console.error('Error during registration:', error);
+            // Obsłuż błąd
+        });
+    }
     function login() {
       var email = document.getElementById("loginEmail").value;
       var password = document.getElementById("loginPassword").value;
+var userData = {
+            email: email,
+            password: password
+        };
 
-      // Wywołaj endpoint do logowania na backendzie, np. /api/users/login
-      // Przetwórz odpowiedź, np. jeśli sukces, przekieruj na stronę główną
-    }
-  </script>
+        // Wywołaj endpoint do logowania na backendzie
+        fetch('/api/users/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(userData),
+        })
+        .then(response => {
+            if (response.ok) {
+                // Przetwórz odpowiedź, np. jeśli sukces, przekieruj na stronę główną
+                window.location.href = '/index.html'; // Tutaj podaj ścieżkę do strony głównej
+            } else {
+                // Obsłuż błąd logowania
+                alert('Invalid credentials. Please try again.');
+            }
+        })
+        .catch(error => {
+            console.error('Error during login:', error);
+            // Obsłuż błąd
+        });
+        }
+</script>
 </body>
 </html>
