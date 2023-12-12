@@ -1,10 +1,12 @@
 package main.pl.onlineShop.classes;
-
-import org.springframework.data.annotation.Id;
+import org.springframework.web.bind.annotation.*;
+import lombok.AllArgsConstructor;
+import javax.persistence.*;
 
 @Entity
 @AllArgsConstructor
 public class User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
