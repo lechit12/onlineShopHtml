@@ -7,8 +7,8 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-@EntityScan(basePackages = "pl.onlineShop.entities")
-@EnableJpaRepositories(basePackages = "pl.onlineShop.entities")
+@EntityScan("pl.onlineShop.entities") // Zastąp odpowiednim pakietem
+@EnableJpaRepositories("pl.onlineShop.entities") // Zastąp odpowiednim pakietem
 public class OnlineshopApplication {
     public static void main(String[] args) {
         SpringApplication.run(OnlineshopApplication.class, args);
