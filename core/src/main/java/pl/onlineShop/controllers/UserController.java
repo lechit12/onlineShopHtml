@@ -32,7 +32,7 @@ public class UserController {
         return user.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
     // Endpoint do rejestracji nowego użytkownika
-    @PostMapping("/register")
+    @PostMapping("/rejestracja")
     public ResponseEntity<String> registerUser(@Valid @RequestBody User user, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             // Obsłuż błędy walidacji
