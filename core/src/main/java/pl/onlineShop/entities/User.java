@@ -1,19 +1,25 @@
 package pl.onlineShop.entities;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.AllArgsConstructor;
+import org.springframework.data.annotation.Id;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 
 
-@Entity
+
 @AllArgsConstructor
-@Getter
+@NoArgsConstructor
 @Setter
+@Entity
+@Getter
 public class User {
 
+    @javax.persistence.Id
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -23,10 +29,11 @@ public class User {
     private String gender;
     private String password;
 
-    public User(String name, String email, String gender, String password) {
-        this.name = name;
-        this.email = email;
-        this.gender = gender;
-        this.password = password;
+
+
+    public void setId(Long id) {
+        this.id = id;
     }
+
+
 }
