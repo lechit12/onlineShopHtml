@@ -1,4 +1,4 @@
-package pl.onlineShop.security;
+package pl.onlineShop.services;
 
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
